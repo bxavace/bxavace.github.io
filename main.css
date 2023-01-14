@@ -188,4 +188,8 @@ a .github:hover {
         grid-template-columns: 1fr 6fr;
         gap: 1.8rem;
     }
+
+    .message h1 {
+        font-size: larger;
+    }
 }
