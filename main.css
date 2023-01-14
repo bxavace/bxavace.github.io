@@ -37,10 +37,6 @@ body.dark {
 }
 
 .container { 
-    display: grid;
-    width: 75%;
-    grid-template-columns: 1fr 6fr;
-    gap: 1.8rem;
     padding-top: 1rem;
 }
 
@@ -142,4 +138,54 @@ a .github:hover {
 .footer footer {
     font-size: 0.9rem;
     margin-top: 20px;
+}
+
+/* for phones */
+@media screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .socials {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .side-nav ul {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .side-nav ul li {
+        margin: 0 20px;
+        padding: 0 20px;
+    }
+
+    .message h1 {
+        font-size: 1rem;
+    }
+
+    .toggle-theme {
+        padding: 8px 13px;
+        width: 100%;
+    }
+
+    .fas.fa-moon {
+        padding: 0 2px;
+    }
+}
+
+/* normal screens */
+@media screen and (min-width: 600px) {
+    .container {
+        display: grid;
+        width: 75%;
+        grid-template-columns: 1fr 6fr;
+        gap: 1.8rem;
+    }
 }

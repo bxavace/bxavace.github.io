@@ -4,3 +4,5 @@
 
 ## TODO:
 - re-implement with nextjs/expressjs/astrojs for personal posts
+- resume
+- mobile responsive
