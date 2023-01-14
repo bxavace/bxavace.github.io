@@ -20,6 +20,9 @@ h1, h2 {
     font-family: "Amiamie Black";
 }
 
+a {
+    color: var(--link)
+}
 
 body {
     display: flex;
