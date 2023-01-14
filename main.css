@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap');
 
 @font-face {
@@ -142,4 +143,203 @@ a .github:hover {
 .footer footer {
     font-size: 0.9rem;
     margin-top: 20px;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap');
+
+@font-face {
+    font-family: "Amiamie Black";
+    src: url("/fonts/Amiamie-Black.ttf");
+}
+
+:root {
+    font-family: "Manrope", sans-serif;
+    --link: #7e4df2;
+    /* --button: #ef861e; */
+    --bg-light: rgba(244, 239, 232, 0.822);
+    --bg-dark: rgb(23, 28, 36);
+    --text-dark: rgba(244, 239, 232, 0.822);
+    --link-dark: #d955ed;
+}
+
+h1, h2 {
+    white-space: nowrap;
+    font-family: "Amiamie Black";
+}
+
+a {
+    color: var(--link)
+}
+
+body {
+    display: flex;
+    background-color: var(--bg-light);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+body.dark {
+    color: var(--text-dark);
+    background-color: var(--bg-dark);
+    transition: 0.2s;
+}
+
+.container { 
+    padding-top: 1rem;
+}
+
+.mini-hero {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.socials {
+    position: absolute;
+    top: 37px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: var(--bg-dark);
+}
+
+.socials a.dark {
+    color: var(--bg-light)
+}
+
+.social {
+    font-size: 1.4rem;
+    padding: 0;
+    padding-right: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+a .github:hover {
+    color:rgb(217, 35, 234);
+    transition: 0.2s;
+}
+
+.linkedin:hover {
+    color: rgb(0, 114, 177);
+    transition: 0.2s;
+}
+
+.side-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 10px;
+    user-select: none;
+}
+
+.side-nav ul {
+    padding: 0;
+}
+
+.side-nav ul li {
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+.side-nav ul li a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.side-nav ul li a:hover {
+    font-weight: bolder;
+    text-decoration: overline;
+}
+
+.side-nav ul li.dark > a {
+    color: var(--link-dark);
+}
+
+.works ul li {
+    list-style-type: none;
+}
+
+.toggle-theme {
+    border: none;
+    /* background-color: var(--button); */
+    background-image: linear-gradient(to top, rgb(255, 111, 153), rgb(132, 94, 194));
+    color: white;
+    padding: 8px;
+    border-radius: 3.5px;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+}
+
+.toggle-theme:hover {
+    background-color: #de8124;
+}
+
+.toggle-theme:active {
+    transform: scale(0.95);
+}
+
+.toggle-theme:focus {
+    outline: none;
+}
+
+.footer footer {
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+/* for phones */
+@media screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .socials {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .side-nav ul {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .side-nav ul li {
+        margin: 0 5px;
+        padding: 0 7px;
+    }
+
+    .message h1 {
+        font-size: 100%;
+    }
+
+    .toggle-theme {
+        padding: 8px 13px;
+        width: 100%;
+    }
+
+    .fas.fa-moon {
+        padding: 0 2px;
+    }
+}
+
+/* normal screens */
+@media screen and (min-width: 600px) {
+    .container {
+        display: grid;
+        width: 75%;
+        grid-template-columns: 1fr 6fr;
+        gap: 1.8rem;
+    }
+
+    .message h1 {
+        font-size: 2.6rem;
+    }
+>>>>>>> a2f2c4c34c6c69c4f22aec19e3298c28f37c099c
 }
