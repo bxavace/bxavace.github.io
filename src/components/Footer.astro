@@ -1,0 +1,57 @@
+---
+const socials = [
+	{
+		name: 'GitHub',
+		link: 'https://www.github.com/bxavace',
+		slug: '@bxavace',
+	},
+	{
+		name: 'LinkedIn',
+		link: 'https://www.linkedin.com/in/brylleace-nunez/',
+		slug: 'brylleace-nunez',
+	},
+	{
+		name: 'Email',
+		link: 'mailto:brylleace.nunez@gmail.com',
+		slug: 'brylleace.nunez@gmail.com',
+	},
+];
+---
+<footer>
+    {socials.map((social) => (
+        <div class="row">
+            <span>{social.name}</span>
+            <hr />
+            <a class="link" href={social.link}>{social.slug}</a>
+        </div>
+    ))}
+</footer>
+
+<style>
+	footer {
+        color: rgba(var(--accent-light));
+    }
+	footer .row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	footer .row span {
+		font-weight: bold;
+		padding-right: 1.25rem;
+	}
+    .link {
+        color: white;
+        text-decoration: none;
+		padding-left: 1.25rem;
+        transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		white-space: nowrap;
+    }
+    .link:hover {
+        color: rgba(var(--accent));
+    }
+	.row hr {
+		width: 100%;
+		border: 0.5px dotted rgba(var(--accent), 10%);
+	}
+</style>

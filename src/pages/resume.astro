@@ -1,0 +1,46 @@
+---
+import Footer from "../components/Footer.astro"
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="Resume">
+    <main>
+        <h1><span class="text-gradient">R</span>esume</h1>
+        <p class="alert-card">
+            I'm still an undergraduate -- need more experiences!
+            <br>
+            <strong>Coming soon...</strong>
+        </p>
+
+        <Footer />
+    </main>
+</Layout>
+
+<style>
+    main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+    .alert-card {
+        margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+    }
+    .alert-card strong {
+		color: rgb(var(--accent-light));
+	}
+</style>

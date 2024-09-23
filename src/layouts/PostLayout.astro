@@ -1,0 +1,34 @@
+---
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+    <main>
+        <h1><span class="text-gradient">{frontmatter.title}</span></h1>
+        <p>on {frontmatter.date}</p>
+        <div class="content">
+            <slot />
+        </div>
+    </main>
+</Layout>
+
+<style>
+    main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+</style>

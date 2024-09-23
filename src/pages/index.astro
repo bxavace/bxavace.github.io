@@ -1,24 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Footer from '../components/Footer.astro';
 
-const socials = [
-	{
-		name: 'GitHub',
-		link: 'https://www.github.com/bxavace',
-		slug: '@bxavace',
-	},
-	{
-		name: 'LinkedIn',
-		link: 'https://www.linkedin.com/in/brylleace-nunez/',
-		slug: 'brylleace-nunez',
-	},
-	{
-		name: 'Email',
-		link: 'mailto:brylleace.nunez@gmail.com',
-		slug: 'brylleace.nunez@gmail.com',
-	},
-];
+
 
 const projects = [
 	{
@@ -60,17 +45,7 @@ const projects = [
 			<img src="./brylle1.jpeg" alt="Brylle's portrait photography during Microsoft Student Community photoshoot.">
 		</div>
 
-		<div class="footer">
-			<footer>
-				{socials.map((social) => (
-					<div class="row">
-						<span>{social.name}</span>
-						<hr />
-						<a class="link" href={social.link}>{social.slug}</a>
-					</div>
-				))}
-			</footer>
-		</div>
+		<Footer />
 	</main>
 </Layout>
 
@@ -87,7 +62,7 @@ const projects = [
 	em {
 		font-family: Georgia, 'Times New Roman', Times, serif;
 	}
-	.astro-a {
+	/* .astro-a {
 		position: absolute;
 		top: -32px;
 		left: 50%;
@@ -95,7 +70,7 @@ const projects = [
 		width: 220px;
 		height: auto;
 		z-index: -1;
-	}
+	} */
 	h1 {
 		font-size: 4rem;
 		font-weight: 700;

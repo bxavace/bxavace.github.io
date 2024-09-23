@@ -1,0 +1,35 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import ProjectCard from "../../components/ProjectCard.astro"
+---
+<Layout title="Projects">
+    <main>
+        <h1><span class="text-gradient">N</span>otable work</h1>
+        <p>See my work here!</p>
+        <ProjectCard
+            href="/projects/ararel"
+            title="Ararel"
+            body="Ararel is a research ideation tool that helps you find the right research topic for you."
+            img="./ararel.png"
+        />
+    </main>
+</Layout>
+
+<style>
+    main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+</style>

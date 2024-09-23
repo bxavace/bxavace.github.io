@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import BlogCard from "../../components/BlogCard.astro"
+
+const posts = await Astro.glob("../blog/posts/*.md")
+---
+<Layout title="Blog">
+    <main>
+        <h1><span class="text-gradient">B</span>log</h1>
+        <p>Keep out of sight!</p>
+
+        <div class="blog-catalog">
+            {posts.map(post => {
+                return <BlogCard
+                    title={post.frontmatter.title}
+                    date={post.frontmatter.date}
+                    description={post.frontmatter.description}
+                    author={post.frontmatter.author}
+                    href={post.url}
+                />
+            })}
+        </div>
+    </main>
+</Layout>
+
+<style>
+    main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+</style>
