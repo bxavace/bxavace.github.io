@@ -1,17 +1,36 @@
 ---
 import Layout from "../../layouts/Layout.astro"
 import ProjectCard from "../../components/ProjectCard.astro"
+
+const projects = [
+	{
+		href: '/projects/ararel',
+		title: 'Ararel',
+		body: 'Ararel is a research ideation tool that helps you find the right research topic for you. Powered by Gemini.',
+		img: '/ararel.png'
+	},
+	{
+		href: '/projects/rambot',
+		title: 'APC RamBot',
+		body: 'Talk with Asia Pacific College admissions -- without the wait. Powered by Azure.',
+		img: '/rambot.png'
+	},
+	{
+		href: 'https://detendre.vercel.app',
+		title: 'Détendre',
+		body: 'Want to explore Europe at home? Powered by Svelte.',
+		img: '/detendre.png'
+	}
+]
 ---
 <Layout title="Projects">
     <main>
         <h1><span class="text-gradient">N</span>otable work</h1>
         <p>See my work here!</p>
-        <ProjectCard
-            href="/projects/ararel"
-            title="Ararel"
-            body="Ararel is a research ideation tool that helps you find the right research topic for you."
-            img="./ararel.png"
-        />
+		{projects.map((project) => (
+			<ProjectCard href={project.href} title={project.title} body={project.body} img={project.img} />
+			<br />
+		))}
     </main>
 </Layout>
 
