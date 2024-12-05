@@ -1,0 +1,59 @@
+---
+interface Props {
+    type: 'genre' | 'published' | 'read'
+    value: string | number
+}
+
+const { type, value } = Astro.props
+
+let text;
+switch (type) {
+    case 'genre':
+        text = `Genre: ${value}`
+        break
+    case 'published':
+        text = `Published: ${value}`
+        break
+    case 'read':
+        text = `Read: ${value}`
+        break
+    default:
+        text = value
+}
+
+function getClassName(type: string) {
+    switch (type) {
+        case 'genre':
+            return 'badge-pill genre';
+        case 'published':
+            return 'badge-pill published';
+        case 'read':
+            return 'badge-pill read';
+        default:
+            return 'badge-pill';
+    }
+}
+---
+
+<div class={getClassName(type)}>
+    {text}
+</div>
+<style>
+    .badge-pill {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        /* border-radius: 999px; FOR ROUNDED */
+        border-radius: 0.5rem;
+        border: 1px solid white;
+        background-color: var(--accent);
+        color: white;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .badge-pill.read {
+        color: rgb(var(--accent-light));
+        border-color: rgb(var(--accent-light));
+    }
+</style>

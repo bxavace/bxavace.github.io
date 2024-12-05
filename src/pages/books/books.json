@@ -1,0 +1,28 @@
+{
+    "books": [
+        {
+            "title": "Before The Coffee Gets Cold",
+            "author": "Toshikazu Kawaguchi",
+            "genre": "Fiction",
+            "year": 2015,
+            "read_on": "November 2024",
+            "review": "The book is a light read; I enjoyed the short separate chapters that left me inspired and hopeful what happens next. As someone who dwells in nostalgia and the idea of going back in time -- not to change anything, but to experience it once more -- the book gave me perspective on dealing with such matters. The climax of every chapter is a tear-jerker!"
+        },
+        {
+            "title": "The Phoenix Project",
+            "author": "Gene Kim, Kevin Behr, George Spafford",
+            "genre": "Fiction",
+            "year": 2013,
+            "read_on": "January 2024",
+            "review": "Will re-read this one. It's a great book if you need to see how IT operations is managed in the eyes of an IT leader."
+        },
+        {
+            "title": "The Deadline",
+            "author": "Tom DeMarco",
+            "genre": "Fiction",
+            "year": 1997,
+            "read_on": "2022",
+            "review": "I've read this one as part of our academic requirements. This is a nice book to read if you're interested in project management and leading teams!"
+        }
+    ]
+}

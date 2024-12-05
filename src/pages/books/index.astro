@@ -1,0 +1,45 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import Books from "./books.json"
+import BookCard from "../../components/BookCard.astro"
+
+---
+
+<Layout title="Books">
+    <main>
+        <h1><span class="text-gradient">B</span>ooks</h1>
+        <p>This is a list of books I've read from 2022 onwards.</p>
+
+        <div class="book-catalog">
+            {Books.books.map(book => {
+                return <BookCard
+                    title={book.title}
+                    author={book.author}
+                    genre={book.genre}
+                    year={book.year}
+                    read_on={book.read_on}
+                    review={book.review}
+                />
+            })}
+        </div>
+    </main>
+</Layout>
+
+<style>
+    main {
+        margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;       
+    }
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+</style>
