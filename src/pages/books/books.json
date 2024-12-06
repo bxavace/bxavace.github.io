@@ -9,6 +9,14 @@
             "review": "The book is a light read; I enjoyed the short separate chapters that left me inspired and hopeful what happens next. As someone who dwells in nostalgia and the idea of going back in time -- not to change anything, but to experience it once more -- the book gave me perspective on dealing with such matters. The climax of every chapter is a tear-jerker!"
         },
         {
+            "title": "The Lost World",
+            "author": "Sir Arthur Conan Doyle",
+            "genre": "Fiction",
+            "year": 1912,
+            "read_on": "2024",
+            "review": "I am not sure if I read this book this year or last year (blame iTunes for ruining my storage!) but I remember enjoying the fantasy and adventure in this book. I'm always a fan of pre-historic animals, and this book gave me a glimpse of what it's like to live in a world where dinosaurs still exist. I sensed a bit of racism in the book considering it was written last century, but yeah, it's a good read! The idea that there exists creatures we thought were gone a long time ago in such a remote place is not so unlikely -- I mean, latest articles about LIDAR and undiscovered places just being discovered now strengthen the possibility that they still exist!"
+        },
+        {
             "title": "The Phoenix Project",
             "author": "Gene Kim, Kevin Behr, George Spafford",
             "genre": "Fiction",
