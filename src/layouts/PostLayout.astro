@@ -7,7 +7,9 @@ const { frontmatter } = Astro.props;
 <Layout title={frontmatter.title}>
     <main>
         <h1><span class="text-gradient">{frontmatter.title}</span></h1>
-        <p>on {frontmatter.date}</p>
+        <div class="blog-post-info">
+			<span>{frontmatter.wordcount} words | on {frontmatter.date} | {frontmatter.readtime} minute read</span>
+		</div>
         <div class="content">
             <slot />
         </div>
