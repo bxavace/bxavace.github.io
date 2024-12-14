@@ -3,6 +3,12 @@ import Layout from "../../layouts/Layout.astro"
 import BlogCard from "../../components/BlogCard.astro"
 
 const posts = await Astro.glob("../blog/posts/*.md")
+
+posts.sort((a, b) => {
+    const dateA = new Date(a.frontmatter.date)
+    const dateB = new Date(b.frontmatter.date)
+    return dateB.getTime() - dateA.getTime()
+})
 ---
 <Layout title="Blog">
     <main>
