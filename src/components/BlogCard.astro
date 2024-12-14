@@ -5,17 +5,24 @@ interface Props {
     description: string,
     author: string,
     href: string | undefined,
+	wordCount: number,
+	readTime: number
 }
 
-const { title, date, description, href, author } = Astro.props
+const { title, date, description, href, author, wordCount, readTime } = Astro.props
 ---
 
 <li class="link-card">
     <a href={href}>
-        <h2>
-            {title}
-            <span>&rarr;</span>
-        </h2>
+		<div class="card-head">
+			<h2>
+				{title}
+				<span>&rarr;</span>
+			</h2>
+			<span>
+				{wordCount} words &middot; {readTime} min read
+			</span>
+		</div>
         <p>
             {description}
         </p>
@@ -60,5 +67,10 @@ const { title, date, description, href, author } = Astro.props
 	}
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));
+	}
+	.card-head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 </style>

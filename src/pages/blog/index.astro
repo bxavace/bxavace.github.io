@@ -23,6 +23,8 @@ posts.sort((a, b) => {
                     description={post.frontmatter.description}
                     author={post.frontmatter.author}
                     href={post.url}
+                    wordCount={post.frontmatter.wordcount}
+                    readTime={post.frontmatter.readtime}
                 />
             })}
         </div>
