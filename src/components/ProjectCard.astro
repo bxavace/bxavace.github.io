@@ -6,22 +6,35 @@ interface Props {
     body: string;
     href: string;
     img: string;
+	info?: string;
 }
 
 const { href, title, body, img } = Astro.props;
 ---
 
 <li class="link-card">
-    <a href={href} target="_blank">
-		<Image src={img} alt={title} width="720" height="480" decoding="async" loading="lazy" />
-        <h2>
-            {title}
-            <span>&rarr;</span>
-        </h2>
-        <p>
-            {body}
-        </p>
-    </a>
+	{href ? (
+		<a href={href} target="_blank">
+			<Image src={img} alt={title} width="720" height="480" decoding="async" loading="lazy" />
+			<h2>
+				{title}
+				<span>&rarr;</span>
+			</h2>
+			<p>
+				{body}
+			</p>
+		</a>
+	) : (
+		<a>
+			<Image src={img} alt={title} width="720" height="480" decoding="async" loading="lazy" />
+			<h2>
+				{title}
+			</h2>
+			<p>
+				{body}
+			</p>
+		</a>
+	)}
 </li>
 
 <style>
