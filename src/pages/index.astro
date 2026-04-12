@@ -134,6 +134,61 @@ const projects = [
 		height: 250px; /* Adjust this value to match your image's aspect ratio */
 	}
 
+	:global(:root:has(.image-container:hover)) {
+		--accent: 214, 2, 112;
+		--accent-light: 182, 98, 255;
+		--accent-dark: 120, 54, 189;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(214, 2, 112),
+			rgb(182, 98, 255) 45%,
+			rgb(0, 56, 168) 100%
+		);
+	}
+
+	:global(body),
+	:global(a),
+	main,
+	h1,
+	h2,
+	h3,
+	p,
+	footer,
+	.row hr,
+	.intro strong,
+	.about-me strong {
+		transition:
+			color 0.45s ease,
+			background-color 0.45s ease,
+			border-color 0.45s ease,
+			box-shadow 0.45s ease;
+	}
+
+	.text-gradient {
+		transition:
+			background-image 0.45s ease,
+			filter 0.45s ease;
+	}
+
+	.portrait .image-container::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			135deg,
+			rgba(214, 2, 112, 0.25),
+			rgba(182, 98, 255, 0.25) 45%,
+			rgba(0, 56, 168, 0.25)
+		);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.45s ease;
+	}
+
+	.image-container:hover::after {
+		opacity: 1;
+	}
+
 	.portrait img {
 		width: 100%;
 		height: 100%;
