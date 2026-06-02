@@ -7,9 +7,9 @@ import Layout from "../layouts/Layout.astro"
     <main>
         <h1><span class="text-gradient">R</span>esume</h1>
         <p class="alert-card">
-            I'm still an undergraduate -- need more experiences!
+			This page is deprecated. The current resume is served from <a href={`${import.meta.env.BASE_URL}resume.pdf`}>resume.pdf</a> in the public directory.
             <br>
-			<strong>Coming soon!</strong>
+			<strong>Please use the resume link in the navbar.</strong>
 		</p>
         <Footer />
     </main>
@@ -39,6 +39,9 @@ import Layout from "../layouts/Layout.astro"
 		padding: 1.5rem;
 		border-radius: 8px;
     }
+		.alert-card a {
+				color: rgb(var(--accent-light));
+		}
     .alert-card strong {
 		color: rgb(var(--accent-light));
 	}
