@@ -22,12 +22,11 @@ const projects = [
 <Layout title="Brylle Ace Nunez">
 	<main>
 		<h1><span class="text-gradient">B</span>rylle <span class="text-gradient">N</span>uñez</h1>
-		<h3>Computer Science, '26 🎓</h3>
+		<h3>Full-stack Developer</h3>
 		<!-- <p class="about-me"> -->
 		<p class="intro">
-			I am currently trudging my way through 4th year at <strong>Asia Pacific College</a></strong>. <br>
-			I hope to end up working as a <strong>Cloud</strong> and/or <strong>Network Engineer</strong> soon. <br>
-			In my spare time, I play <em>World of Warcraft</em>. If not gaming, I'm probably binge-watching <em>Modern Family</em>!
+			I am a computer science graduate from <strong>Asia Pacific College</strong>. <br>
+			In my spare time, I play <em>World of Warcraft</em> and <em>League of Legends</em>. If not gaming, I'm probably binge-watching <em>Modern Family</em>!
 		</p>
 
 		<h2>Notable work:</h2>
@@ -111,6 +110,9 @@ const projects = [
 	}
 	.about-me strong {
 		color: rgb(var(--accent-light));
+	}
+	.intro {
+		text-align: center;
 	}
 	.intro strong {
 		color: rgb(var(--accent-light));
@@ -198,7 +200,11 @@ const projects = [
 		left: 0;
 		transition: opacity 0.5s ease;
 	}
+	.img1 {
+		object-fit: cover;
+	}
 	.img2 {
+		object-fit: cover;
 		opacity: 0;
 	}
 	.image-container:hover .img2 {
@@ -208,6 +214,7 @@ const projects = [
 		opacity: 0;
 	}
 	.sub {
+		text-align: center;
 		margin-bottom: 2.5rem;
 	}
 	footer {
