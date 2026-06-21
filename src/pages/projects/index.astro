@@ -8,35 +8,57 @@ const projects = [
 		title: 'Whisk',
 		body: 'An AI-powered stock and cake ordering platform for a Philippine bakery company.',
 		img: '/whisk.png',
+		technologies: ['Angular', 'MSSQL', 'ASP.NET Core 6', 'Google Imagen'],
+		year: '2025'
 	},
 	{
 		href: 'http://68.183.20.191/',
 		title: 'Ararel',
-		body: 'Ararel is a research ideation tool that helps you find the right research topic for you. Powered by Gemini.',
-		img: '/ararel.png'
+		body: 'Ararel is a research ideation tool that helps you find the right research topic for you.',
+		img: '/ararel.png',
+		technologies: ['Svelte', 'Flask', 'Gemini', 'SQLite'],
+		year: '2024'
 	},
 	{
 		href: 'https://www.apc.edu.ph',
 		title: 'APC RamBot',
-		body: 'Talk with Asia Pacific College admissions -- without the wait. Powered by Azure.',
-		img: '/rambot.png'
+		body: 'Talk with Asia Pacific College admissions -- without the wait.',
+		img: '/rambot.png',
+		technologies: ['LangChain', 'Azure OpenAI', 'Azure AI Search', 'Flask', 'SQLite'],
+		year: '2025'
 	},
 	{
 		href: 'https://detendre.vercel.app',
 		title: 'Détendre',
-		body: 'Want to explore Europe at home? Powered by Svelte.',
-		img: '/detendre.png'
+		body: 'Want to explore Europe at home?',
+		img: '/detendre.png',
+		technologies: ['Svelte'],
+		year: '2024'
 	}
 ]
+
+const sortedProjects = [...projects].sort((a, b) => {
+	const yearA = a.year || '0';
+	const yearB = b.year || '0';
+	return parseInt(yearB) - parseInt(yearA);
+});
 ---
 <Layout title="Projects">
     <main>
         <h1><span class="text-gradient">N</span>otable work</h1>
         <p>See my work here!</p>
-		{projects.map((project) => (
-			<ProjectCard href={project.href} title={project.title} body={project.body} img={project.img} />
-			<br />
-		))}
+		<ul role="list" class="link-card-grid">
+			{sortedProjects.map((project) => (
+				<ProjectCard 
+					href={project.href} 
+					title={project.title} 
+					body={project.body} 
+					img={project.img} 
+					technologies={project.technologies} 
+					year={project.year} 
+				/>
+			))}
+		</ul>
     </main>
 </Layout>
 
@@ -44,7 +66,7 @@ const projects = [
     main {
 		margin: auto;
 		padding: 1rem;
-		width: 800px;
+		width: 1200px;
 		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;
@@ -56,5 +78,11 @@ const projects = [
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+		gap: 2rem;
+		padding: 0;
 	}
 </style>

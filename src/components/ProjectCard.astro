@@ -6,34 +6,57 @@ interface Props {
     body: string;
     href: string;
     img: string;
-	info?: string;
+	technologies?: string[];
+	year?: string;
 }
 
-const { href, title, body, img } = Astro.props;
+const { href, title, body, img, technologies = [], year = "" } = Astro.props;
 ---
 
 <li class="link-card">
 	{href ? (
 		<a href={href} target="_blank">
-			<Image src={img} alt={title} width="720" height="480" decoding="async" loading="lazy" />
-			<h2>
-				{title}
-				<span>&rarr;</span>
-			</h2>
-			<p>
-				{body}
-			</p>
+			<div class="img-container">
+				<Image src={img} alt={title} width="720" height="480" decoding="async" loading="lazy" />
+			</div>
+			<div class="content">
+				<h2>
+					{title} {year && <span class="year">({year})</span>}
+					<span>&rarr;</span>
+				</h2>
+				<p>
+					{body}
+				</p>
+				{technologies.length > 0 && (
+					<div class="tech-stack">
+						{technologies.map((tech) => (
+							<span class="tech-pill">{tech}</span>
+						))}
+					</div>
+				)}
+			</div>
 		</a>
 	) : (
-		<a>
-			<Image src={img} alt={title} width="720" height="480" decoding="async" loading="lazy" />
-			<h2>
-				{title}
-			</h2>
-			<p>
-				{body}
-			</p>
-		</a>
+		<div class="no-link">
+			<div class="img-container">
+				<Image src={img} alt={title} width="720" height="480" decoding="async" loading="lazy" />
+			</div>
+			<div class="content">
+				<h2>
+					{title} {year && <span class="year">({year})</span>}
+				</h2>
+				<p>
+					{body}
+				</p>
+				{technologies.length > 0 && (
+					<div class="tech-stack">
+						{technologies.map((tech) => (
+							<span class="tech-pill">{tech}</span>
+						))}
+					</div>
+				)}
+			</div>
+		</div>
 	)}
 </li>
 
@@ -45,34 +68,64 @@ const { href, title, body, img } = Astro.props;
 		background-color: #23262d;
 		background-image: none;
 		background-size: 400%;
-		border-radius: 7px;
+		border-radius: 12px;
 		background-position: 100%;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+		overflow: hidden;
+	}
+	.img-container {
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
 	}
     .link-card img {
         width: 100%;
+		height: 100%;
         object-fit: cover;
-        border-radius: 4.5px;
+		object-position: center;
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     }
-	.link-card > a {
+	.link-card > a, .no-link {
 		width: 100%;
 		text-decoration: none;
 		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
+		border-radius: 11px;
 		color: white;
 		background-color: #23262d;
-		opacity: 0.8;
+		opacity: 0.9;
+		display: flex;
+		flex-direction: column;
+	}
+	.content {
+		padding: 1.5rem;
 	}
 	h2 {
 		margin: 0;
-		font-size: 1.30rem;
+		font-size: 1.5rem;
 		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 	}
+	.year {
+		font-size: 1rem;
+		color: #999;
+		font-weight: normal;
+	}
 	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
+		margin-top: 0.75rem;
+		margin-bottom: 1rem;
+		color: #ccc;
+	}
+	.tech-stack {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	.tech-pill {
+		background: rgba(255, 255, 255, 0.1);
+		padding: 0.2rem 0.6rem;
+		border-radius: 20px;
+		font-size: 0.8rem;
+		color: #ddd;
 	}
 	.link-card:is(:hover, :focus-within) {
 		background-position: 0;
