@@ -1,6 +1,7 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import { ViewTransitions } from 'astro:transitions';
+import { fly } from '../transitions/fly';
 
 interface Props {
 	title: string;
@@ -22,7 +23,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<Navbar />
-		<div transition:animate="slide">
+		<div transition:animate={fly({ duration: 400 })}>
 			<slot />
 		</div>
 	</body>
@@ -38,6 +39,31 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
+		/* new page enters from the left; old page drifts down as it leaves */
+		--fly-in-x: -40px;
+		--fly-in-y: 0px;
+		--fly-out-x: 0px;
+		--fly-out-y: 20px;
+	}
+	@keyframes fly-in {
+		from {
+			opacity: 0;
+			transform: translate(var(--fly-in-x), var(--fly-in-y));
+		}
+		to {
+			opacity: 1;
+			transform: translate(0, 0);
+		}
+	}
+	@keyframes fly-out {
+		from {
+			opacity: 1;
+			transform: translate(0, 0);
+		}
+		to {
+			opacity: 0;
+			transform: translate(var(--fly-out-x), var(--fly-out-y));
+		}
 	}
 	::selection {
 		background: rgba(var(--accent-dark), 0.59);
@@ -47,6 +73,7 @@ const { title } = Astro.props;
 		font-family: system-ui, sans-serif;
 		background: #13151a;
 		height: 100%;
+		scrollbar-gutter: stable;
 	}
 	code {
 		font-family:
